@@ -1,0 +1,63 @@
+{
+    "name": "Zeus Exchange Default List",
+    "timestamp": "2021-03-17T09:56:23Z",
+    "version": {
+      "major": 2,
+      "minor": 10,
+      "patch": 0
+    },
+    "tags": {},
+    "logoURI": "https://exchange.pancakeswap.finance/images/pancakeswap.png",
+    "keywords": ["pancake", "default"],
+    "tokens": [
+      {
+        "name": "BUSD Token",
+        "symbol": "BUSD",
+        "address": "0xBEB0131D95AC3F03fd15894D0aDE5DBf7451d171",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
+      },
+      {
+        "name": "Ethereum Token",
+        "symbol": "ETH",
+        "address": "0x6576Bb918709906DcbFDCeae4bB1e6df7C8a1077",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x2170ed0880ac9a755fd29b2688956bd959f933f8.png"
+      },
+      {
+        "name": "Tether USD",
+        "symbol": "USDT",
+        "address": "0x4f3c8e20942461e2c3bdd8311ac57b0c222f2b82",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x55d398326f99059ff775485246999027b3197955.png"
+      },
+      {
+        "name": "USD Coin",
+        "symbol": "USDC",
+        "address": "0x22e89898A04eaf43379BeB70bf4E38b1faf8A31e",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      },
+      {
+        "name": "Token1",
+        "symbol": "TK1",
+        "address": "0x77290ce5E17169Ba4A9c0AdAF385287A603288d6",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5621b5a3f4a8008c4ccdd1b942b121c8b1944f1f.png"
+      },
+      {
+        "name": "Token2",
+        "symbol": "TK2",
+        "address": "0xF22Cf1b8f18122a4dfDaAefAE344aB10e17e6C35",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5621b5a3f4a8008c4ccdd1b942b121c8b1944f1f.png"
+      }
+    ]
+  }
+  

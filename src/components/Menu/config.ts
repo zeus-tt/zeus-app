@@ -58,7 +58,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Docs',
-        href: 'https://docs.zeus.exchange',
+        href: 'https://docs.zeusswap.fi/',
       },
       // {
       //   label: 'Voting',

@@ -7502,7 +7502,7 @@ var links = [
     //   },
       {
         label: 'Docs',
-        href: 'https://docs.zeus.exchange',
+        href: 'https://docs.zeusswap.fi/',
       },
     //   {
     //     label: 'Blog',

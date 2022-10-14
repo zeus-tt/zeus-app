@@ -13,7 +13,7 @@ import {
   useMatchBreakpoints,
 } from '@pancakeswap-libs/uikit'
 import styled from 'styled-components'
-import { Link, Router } from 'react-router-dom'
+import { Link, NavLink, Router } from 'react-router-dom'
 import UnlockButton from 'components/ConnectWalletButton'
 import { TranslateString } from 'utils/translateTextHelpers'
 import logo from '../../../assets/full-logo.svg'
@@ -35,6 +35,13 @@ const StyledNavButton = styled(Button)`
   font-weight: 400;
   font-size: 1em;
   font-family: 'Raleway';
+`
+
+const StyledNavButtonLink = styled.a`
+  font-weight: 700;
+  font-size: 1em;
+  font-family: 'Raleway';
+  color: white;
 `
 
 const StyledSideDiv = styled.div`
@@ -61,22 +68,22 @@ function mobileSideNav() {
     <StyledSideDiv>
       <ButtonMenuItem>
         <StyledNavButton to="/swap" as={Link}>
-          Trade
+          Swap
         </StyledNavButton>
       </ButtonMenuItem>
       <ButtonMenuItem>
-        <StyledNavButton to="/liquidity" as={Link}>
-          Earn
+        <StyledNavButton to="/pool" as={Link}>
+          Pool
         </StyledNavButton>
+      </ButtonMenuItem>
+      <ButtonMenuItem>
+        <StyledNavButtonLink href="https://docs.zeusswap.fi/" target="_blank">
+          Docs
+        </StyledNavButtonLink>
       </ButtonMenuItem>
       <ButtonMenuItem>
         <StyledNavButton to="/swap" as={Link}>
-          Win
-        </StyledNavButton>
-      </ButtonMenuItem>
-      <ButtonMenuItem>
-        <StyledNavButton to="/swap" as={Link}>
-          NFT
+          Discord
         </StyledNavButton>
       </ButtonMenuItem>
     </StyledSideDiv>
@@ -104,18 +111,19 @@ function Navbar() {
       <Image src={logo} width={92} height={50} />
       {mobileBreakpoints.isXl && (
         <Flex alignItems="center">
-          <ButtonMenuItem>
-            <StyledNavButton as={Link} to="swap" href="/swap">
-              Swap
-            </StyledNavButton>
+          <ButtonMenuItem id="swap-nav-link" to="/swap" as={NavLink}>
+            Swap
+          </ButtonMenuItem>
+          <ButtonMenuItem id="pool-nav-link" to="pool" as={NavLink}>
+            Pools
           </ButtonMenuItem>
 
           <ButtonMenuItem>
-            <StyledNavButton as={Link} to="pool" href="/pool">
-              Pools
-            </StyledNavButton>
+            <StyledNavButtonLink href="https://docs.zeusswap.fi/" target="_blank">
+              Docs
+            </StyledNavButtonLink>
           </ButtonMenuItem>
-          <StyledNavButton variant="text">Docs</StyledNavButton>
+
           <StyledNavButton variant="text">Discord </StyledNavButton>
         </Flex>
       )}

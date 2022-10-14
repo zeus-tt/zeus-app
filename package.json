@@ -91,8 +91,8 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
-    "postinstall": "cp -r ./fork/@pancakeswap-libs/sdk ./node_modules/@pancakeswap-libs/sdk; cp -r ./fork/@pancakeswap-libs/uikit ./node_modules/@pancakeswap-libs/uikit",
-    "copy-sdk": "cp -r ./fork/@pancakeswap-libs/sdk ./node_modules/@pancakeswap-libs/sdk"
+    "postinstall": "rm -r ./node_modules/@pancakeswap-libs/sdk; rm -r ./node_modules/@pancakeswap-libs/uikit; cp -r ./fork/@pancakeswap-libs/sdk ./node_modules/@pancakeswap-libs/sdk; cp -r ./fork/@pancakeswap-libs/uikit ./node_modules/@pancakeswap-libs/uikit",
+    "copy-sdk": "rm -r ./node_modules/@pancakeswap-libs/sdk; cp -r ./fork/@pancakeswap-libs/sdk ./node_modules/@pancakeswap-libs/sdk"
   },
   "husky": {
     "hooks": {

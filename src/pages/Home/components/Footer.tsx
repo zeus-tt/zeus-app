@@ -79,7 +79,7 @@ function Footer() {
           <StyledHeading mb="1em" bold>
             Developers
           </StyledHeading>
-          <StyledSubHeading target="_blank" href="https://docs.zeus.exchange">Docs</StyledSubHeading>
+          <StyledSubHeading target="_blank" href="https://docs.zeusswap.fi/">Docs</StyledSubHeading>
         </Flex>
         <Flex flex={1} />
       </StyledHomeCard>

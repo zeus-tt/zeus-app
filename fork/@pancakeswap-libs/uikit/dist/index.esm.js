@@ -7406,105 +7406,105 @@ var links = [
       },
     ],
   },
-//   {
-//     label: 'Farms',
-//     icon: 'FarmIcon',
-//     href: '/farms',
-//     status: status.LIVE,
-//   },
+  //   {
+  //     label: 'Farms',
+  //     icon: 'FarmIcon',
+  //     href: '/farms',
+  //     status: status.LIVE,
+  //   },
   {
     label: 'Pools',
     icon: 'PoolIcon',
     href: '/syrup',
   },
-//   {
-//     label: 'Lottery',
-//     icon: 'TicketIcon',
-//     href: '/lottery',
-//   },
-//   {
-//     label: 'NFT',
-//     icon: 'NftIcon',
-//     href: '/nft',
-//   },
-//   {
-//     label: 'Team Battle',
-//     icon: 'TeamBattleIcon',
-//     href: '/competition',
-//     status: status.SOON,
-//   },
-//   {
-//     label: 'Profile & Teams',
-//     icon: 'GroupsIcon',
-//     items: [
-//       {
-//         label: 'Leaderboard',
-//         href: '/teams',
-//         status: status.NEW,
-//       },
-//       {
-//         label: 'YourProfile',
-//         href: '/',
-//       },
-//     ],
-//     calloutClass: 'rainbow',
-//   },
-//   {
-//     label: 'Info',
-//     icon: 'InfoIcon',
-//     items: [
-//       {
-//         label: 'Overview',
-//         href: 'https://pancakeswap.info',
-//       },
-//       {
-//         label: 'Tokens',
-//         href: 'https://pancakeswap.info/tokens',
-//       },
-//       {
-//         label: 'Pairs',
-//         href: 'https://pancakeswap.info/pairs',
-//       },
-//       {
-//         label: 'Accounts',
-//         href: 'https://pancakeswap.info/accounts',
-//       },
-//     ],
-//   },
-//   {
-//     label: 'IFO',
-//     icon: 'IfoIcon',
-//     items: [
-//       {
-//         label: 'Next',
-//         href: '/ifo',
-//       },
-//       {
-//         label: 'History',
-//         href: '/ifo/history',
-//       },
-//     ],
-//   },
+  //   {
+  //     label: 'Lottery',
+  //     icon: 'TicketIcon',
+  //     href: '/lottery',
+  //   },
+  //   {
+  //     label: 'NFT',
+  //     icon: 'NftIcon',
+  //     href: '/nft',
+  //   },
+  //   {
+  //     label: 'Team Battle',
+  //     icon: 'TeamBattleIcon',
+  //     href: '/competition',
+  //     status: status.SOON,
+  //   },
+  //   {
+  //     label: 'Profile & Teams',
+  //     icon: 'GroupsIcon',
+  //     items: [
+  //       {
+  //         label: 'Leaderboard',
+  //         href: '/teams',
+  //         status: status.NEW,
+  //       },
+  //       {
+  //         label: 'YourProfile',
+  //         href: '/',
+  //       },
+  //     ],
+  //     calloutClass: 'rainbow',
+  //   },
+  //   {
+  //     label: 'Info',
+  //     icon: 'InfoIcon',
+  //     items: [
+  //       {
+  //         label: 'Overview',
+  //         href: 'https://pancakeswap.info',
+  //       },
+  //       {
+  //         label: 'Tokens',
+  //         href: 'https://pancakeswap.info/tokens',
+  //       },
+  //       {
+  //         label: 'Pairs',
+  //         href: 'https://pancakeswap.info/pairs',
+  //       },
+  //       {
+  //         label: 'Accounts',
+  //         href: 'https://pancakeswap.info/accounts',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     label: 'IFO',
+  //     icon: 'IfoIcon',
+  //     items: [
+  //       {
+  //         label: 'Next',
+  //         href: '/ifo',
+  //       },
+  //       {
+  //         label: 'History',
+  //         href: '/ifo/history',
+  //       },
+  //     ],
+  //   },
   {
     label: 'More',
     icon: 'MoreIcon',
     items: [
-    //   {
-    //     label: 'Voting',
-    //     href: 'https://voting.pancakeswap.finance',
-    //   },
-    //   {
-    //     label: 'Github',
-    //     href: 'https://github.com/pancakeswap',
-    //   },
+      //   {
+      //     label: 'Voting',
+      //     href: 'https://voting.pancakeswap.finance',
+      //   },
+      //   {
+      //     label: 'Github',
+      //     href: 'https://github.com/pancakeswap',
+      //   },
       {
         label: 'Docs',
         href: 'https://docs.zeusswap.fi/',
       },
-    //   {
-    //     label: 'Blog',
-    //     href: 'https://pancakeswap.medium.com',
-    //   },
+      //   {
+      //     label: 'Blog',
+      //     href: 'https://pancakeswap.medium.com',
+      //   },
     ],
   },
 ]
@@ -8346,6 +8346,20 @@ var Icon$3 = function (props) {
   )
 }
 
+/*
+
+// <rect width="161" height="159" rx="13" fill="url(#pattern0)"/>
+// <defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_1_4" transform="translate(0 -0.00628931) scale(0.00195312 0.00197769)"/>
+</pattern>
+<image id="image0_1_4" width="512" height="512" xlink:href="
+// </defs>
+
+*/
+
+var Icon$tt = function (props) {}
+
 var Icon$2 = function (props) {
   return React.createElement(
     Svg,
@@ -8443,6 +8457,11 @@ var connectors = [
     connectorId: ConnectorNames.Injected,
   },
   {
+    title: 'TT Wallet',
+    image: 'https://play-lh.googleusercontent.com/tviPOb4ozjS0lVvL-KT4hDdG-bqUqIsbx3Aw4Rx4My43fUB-5T-P_bXxB_508z4wdZM',
+    connectorId: ConnectorNames.Injected,
+  },
+  {
     title: 'TrustWallet',
     icon: Icon$3,
     connectorId: ConnectorNames.Injected,
@@ -8481,7 +8500,9 @@ var WalletCard = function (_a) {
     onDismiss = _a.onDismiss,
     mb = _a.mb
   var title = walletConfig.title,
-    Icon = walletConfig.icon
+    Icon = walletConfig.icon,
+    Image = walletConfig.image ? walletConfig.image : null;
+
   return React.createElement(
     Button,
     {
@@ -8497,7 +8518,7 @@ var WalletCard = function (_a) {
       id: 'wallet-connect-' + title.toLocaleLowerCase(),
     },
     React.createElement(Text, { bold: true, color: 'primary', mr: '16px' }, title),
-    React.createElement(Icon, { width: '32px' })
+    Icon ? React.createElement(Icon, { width: '32px' }) : React.createElement('img', { src: Image, alt: 'tt wallet', height: '32px', width: '32px' })
   )
 }
 

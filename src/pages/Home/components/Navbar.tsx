@@ -82,9 +82,9 @@ function mobileSideNav() {
         </StyledNavButtonLink>
       </ButtonMenuItem>
       <ButtonMenuItem>
-        <StyledNavButton to="/swap" as={Link}>
+        <StyledNavButtonLink href="https://discord.gg/TEwDyb7d" target="_blank">
           Discord
-        </StyledNavButton>
+        </StyledNavButtonLink>
       </ButtonMenuItem>
     </StyledSideDiv>
   )
@@ -124,7 +124,11 @@ function Navbar() {
             </StyledNavButtonLink>
           </ButtonMenuItem>
 
-          <StyledNavButton variant="text">Discord </StyledNavButton>
+          <ButtonMenuItem>
+            <StyledNavButtonLink href="https://discord.gg/TEwDyb7d" target="_blank">
+              Discord
+            </StyledNavButtonLink>
+          </ButtonMenuItem>
         </Flex>
       )}
 

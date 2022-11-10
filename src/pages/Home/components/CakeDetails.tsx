@@ -1,7 +1,10 @@
 import { Button, Flex, Image, Text } from '@pancakeswap-libs/uikit'
 import React from 'react'
 import Row from 'components/Row'
+import { Link } from 'react-router-dom'
+
 import styled from 'styled-components'
+import { ExternalLink } from 'components/Shared'
 import StyledHomeCard from '../elements/Card'
 import orangeQuotationImg from '../../../assets/Home/orangeQuotation.png'
 import blueQuotationImg from '../../../assets/Home/blueQuotation.png'
@@ -59,12 +62,14 @@ function CakeDetails() {
             Zeus Token ($ZEUS) is the world`s main currency of exchange: use ZEUS to trade valuable resources and heroes between each other.
           </Text>
           <Row mt="1em">
-            <Button>Trade Now</Button>
-            <StyledTradeButton variant="secondary">
-              <StyledFillColor>
-                <StyledPrimaryTextBlue>Learn More</StyledPrimaryTextBlue>
-              </StyledFillColor>
-            </StyledTradeButton>
+            <Button to="/swap" as={Link}>Trade Now</Button>
+            <ExternalLink href="https://docs.zeusswap.fi/get-started/introduction-to-zeusswap">
+              <StyledTradeButton variant="secondary">
+                <StyledFillColor>
+                  <StyledPrimaryTextBlue>Learn More</StyledPrimaryTextBlue>
+                </StyledFillColor>
+              </StyledTradeButton>
+            </ExternalLink>
           </Row>
         </Flex>
         <Flex flex="1 1 200px" alignItems="center" justifyContent="center">

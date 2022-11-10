@@ -1,7 +1,9 @@
 import React from 'react'
 import Row from 'components/Row'
+import { Link } from 'react-router-dom'
 import { Button, Flex, Image, Text, useMatchBreakpoints } from '@pancakeswap-libs/uikit'
 import styled from 'styled-components'
+import { ExternalLink } from 'components/Shared'
 import StyledHomeCard from '../elements/Card'
 import learnmoreImg from '../../../assets/Home/Learn-more.png'
 
@@ -54,12 +56,14 @@ function LearnMore() {
               Trade any token on ThunderCore in seconds, just by connecting your wallet.
             </Text>
             <Row mt="1em">
-              <Button>Trade Now</Button>
+              <Button as={Link} to="/swap">Trade Now</Button>
+              <ExternalLink href="https://docs.zeusswap.fi/get-started/introduction-to-zeusswap">
               <StyledTradeButton variant="secondary">
                 <StyledFillColor>
                   <StyledPrimaryTextBlue>Learn More</StyledPrimaryTextBlue>
                 </StyledFillColor>
               </StyledTradeButton>
+              </ExternalLink>
             </Row>
           </Flex>
           <Flex flex="1 1 250px" alignItems="center" justifyContent="center">

@@ -1,7 +1,8 @@
 import { Button, Flex, Image, Text, useMatchBreakpoints } from '@pancakeswap-libs/uikit'
 import UnlockButton from 'components/ConnectWalletButton'
 import Row from 'components/Row'
-import React from 'react'
+import React, { useCallback } from 'react'
+import {useHistory} from 'react-router-dom';
 import styled from 'styled-components'
 
 import characterImg from '../../../assets/Home/character.png'
@@ -71,6 +72,10 @@ const StyledFillColor = styled.div`
 function Hero() {
   const mobileBreakpoints = useMatchBreakpoints()
 
+  const history = useHistory();
+  const goToSwap = useCallback(() => history.push('/swap'), [history]);
+
+
   return (
     <StyledMainContainer>
       <Flex flexWrap="wrap-reverse">
@@ -79,11 +84,12 @@ function Hero() {
             Upcoming GameFi Decentralized Exchange on ThunderCore
           </Text>
           <Text fontWeight="400" fontSize="1.125em">
-          Our swap and liquidity pool features are live on the mainnet. Join our community to stay updated about upcoming GameFi!
+            Our swap and liquidity pool features are live on the mainnet. Join our community to stay updated about upcoming GameFi!
           </Text>
           <Row mt="1em">
             <UnlockButton />{' '}
-            <StyledTradeButton variant="secondary">
+            {/*  to="/swap" as={Link} */}
+            <StyledTradeButton variant="secondary" onClick={goToSwap}>
               <StyledFillColor>
                 <StyledPrimaryTextBlue fontSize="1em">Trade Now</StyledPrimaryTextBlue>
               </StyledFillColor>

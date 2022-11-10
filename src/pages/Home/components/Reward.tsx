@@ -1,5 +1,6 @@
 import { Card, CardBody, Button, Text } from '@pancakeswap-libs/uikit'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Heading } from 'rebass'
 import styled from 'styled-components'
 import StyledHomeCard from '../elements/Card'
@@ -37,7 +38,7 @@ function Reward() {
           <StyledPrimaryText my="0.2em" bold color="primary" fontSize="1.75em">
             Swap and Pools are live on Zeus!
           </StyledPrimaryText>
-          <Button>Swap Now</Button>
+          <Button as={Link} to="/swap">Swap Now</Button>
         </CardBody>
       </StyledCard>
     </StyledMainCard>

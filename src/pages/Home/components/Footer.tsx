@@ -2,6 +2,7 @@ import React from 'react'
 import { Flex, GlobeIcon, IconButton, Image, Text, TwitterIcon, TelegramIcon } from '@pancakeswap-libs/uikit'
 import { TranslateString } from 'utils/translateTextHelpers'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import logo from '../../../assets/footerLogo.svg'
 import StyledHomeCard from '../elements/Card'
 
@@ -72,8 +73,13 @@ function Footer() {
           <StyledHeading mb="1em" bold>
             Services
           </StyledHeading>
-          <StyledSubHeading>Swap</StyledSubHeading>
-          <StyledSubHeading>Liquidity Pools</StyledSubHeading>
+          <StyledSubHeading href="https://olympiapad.com/" target="_blank">Olympia Launchpad</StyledSubHeading>
+          <Link to="/swap">
+            <StyledSubHeading>Swap</StyledSubHeading>
+          </Link>
+          <Link to="/pool">
+            <StyledSubHeading>Liquidity Pools</StyledSubHeading>
+          </Link>
         </Flex>
         <Flex flex={1} flexDirection="column">
           <StyledHeading mb="1em" bold>

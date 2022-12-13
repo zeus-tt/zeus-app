@@ -41,22 +41,132 @@
         "chainId": 108,
         "decimals": 18,
         "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
-      },
+      }
+      ,
       {
-        "name": "Token1",
-        "symbol": "TK1",
-        "address": "0x77290ce5E17169Ba4A9c0AdAF385287A603288d6",
+        "name": "ZIPPY",
+        "symbol": "ZIPPY",
+        "address": "0xD46d770b3032D92D9E1d4e5B925bB8840cDB4314",
         "chainId": 108,
         "decimals": 18,
-        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5621b5a3f4a8008c4ccdd1b942b121c8b1944f1f.png"
-      },
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
       {
-        "name": "Token2",
-        "symbol": "TK2",
-        "address": "0xF22Cf1b8f18122a4dfDaAefAE344aB10e17e6C35",
+        "name": "XY Token",
+        "symbol": "XY",
+        "address": "0x333333331193762b9dd5828fA91aFA40d8432B7A",
         "chainId": 108,
         "decimals": 18,
-        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x5621b5a3f4a8008c4ccdd1b942b121c8b1944f1f.png"
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Wrapped Bitcoin",
+        "symbol": "WBTC",
+        "address": "0x18fB0A62f207A2a082cA60aA78F47a1af4985190",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Techno Fun",
+        "symbol": "TFN",
+        "address": "0xFA9DbFc80A3cFdd7192ccee23567d7bA58ea6F07",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "RISER",
+        "symbol": "RISER",
+        "address": "0xc1e7000f379f2247ae930ba98d5568cd9d0b924b",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Ram",
+        "symbol": "RAM",
+        "address": "0xfE146D5710015d4075355fb7bE8d133346EC63c2",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Prize",
+        "symbol": "Prize",
+        "address": "0x8f23FC0257d6E8256cd3Fdea14911CA3E491DAB0",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Punch",
+        "symbol": "PUNCH",
+        "address": "0x8c2eeccd83752db11594e699bbc8f756c4d03cb9",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Planet Master Token",
+        "symbol": "PMT",
+        "address": "0xfF99e917cF1E081A4e52836bbE8DF610cbAb9DD7",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Oolong",
+        "symbol": "OOL",
+        "address": "0x47fe33d321EEF4719FdFf38EA72B1dFC7f0cdf10",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "NICER",
+        "symbol": "NICER",
+        "address": "0x1F489E0282cFA883A4224C91309bC4D4c062ed93",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "Huobi Token",
+        "symbol": "HT",
+        "address": "0x0212b1F75503413b01A98158434c4570FB6e808c",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "HODLZ",
+        "symbol": "Zippy Hodl",
+        "address": "0x152FeA8177a31F4FE1cDe7AdaB12C744F1860166",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
+      }
+      ,
+      {
+        "name": "GuessToken",
+        "symbol": "GuessToken",
+        "address": "0xe15c1cbF2de3fd15864F48A66b9da07736dAF578",
+        "chainId": 108,
+        "decimals": 18,
+        "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d.png"
       }
     ]
   }

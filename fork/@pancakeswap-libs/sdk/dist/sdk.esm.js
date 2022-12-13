@@ -17,7 +17,6 @@ var ChainId;
 
 (function (ChainId) {
   ChainId[ChainId["MAINNET"] = 108] = "MAINNET";
-  ChainId[ChainId["TESTNET"] = 18] = "TESTNET";
 })(ChainId || (ChainId = {}));
 
 var TradeType;
@@ -35,8 +34,8 @@ var Rounding;
   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
 })(Rounding || (Rounding = {}));
 
-var FACTORY_ADDRESS = '0x8BE508260eA8406443abd73b27B5aB0AFEb2467d';
-var INIT_CODE_HASH = '0xc024326f63173518524a64f80ab969c7582c7f2f1734492add2c7ab9d1f306ea';
+var FACTORY_ADDRESS = '0x6C8EdD67DD270a7e5613Db0BF931c2C0ACc276b8';
+var INIT_CODE_HASH = '0x44c13b46b1f8f17e7400a875ee0a780b08fe0173ac1c4199896abc1403373dc2';
 var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
 
 var ZERO = /*#__PURE__*/JSBI.BigInt(0);
@@ -372,7 +371,6 @@ function Currency(decimals, symbol, name) {
 Currency.ETHER = /*#__PURE__*/new Currency(18, 'TT', 'Thunder Token');
 var ETHER = Currency.ETHER;
 
-var _WETH;
 /**
  * Represents an ERC20 token with a unique address and some metadata.
  */
@@ -435,7 +433,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0x413cEFeA29F2d07B8F2acFA69d92466B9535f717', 18, 'WTT', 'Wrapped TT'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, '0x390127E81EDe57CFa1e65eA9A96bD68A59D0a099', 18, 'WTT', 'Wrapped TT'), _WETH);
+var WETH = new Token(108, '0x413cEFeA29F2d07B8F2acFA69d92466B9535f717', 18, 'WTT', 'Wrapped TT');
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
@@ -954,9 +952,9 @@ var Route = /*#__PURE__*/function () {
     !pairs.every(function (pair) {
       return pair.chainId === pairs[0].chainId;
     }) ? process.env.NODE_ENV !== "production" ? invariant(false, 'CHAIN_IDS') : invariant(false) : void 0;
-    !(input instanceof Token && pairs[0].involvesToken(input) || input === ETHER && pairs[0].involvesToken(WETH[pairs[0].chainId])) ? process.env.NODE_ENV !== "production" ? invariant(false, 'INPUT') : invariant(false) : void 0;
-    !(typeof output === 'undefined' || output instanceof Token && pairs[pairs.length - 1].involvesToken(output) || output === ETHER && pairs[pairs.length - 1].involvesToken(WETH[pairs[0].chainId])) ? process.env.NODE_ENV !== "production" ? invariant(false, 'OUTPUT') : invariant(false) : void 0;
-    var path = [input instanceof Token ? input : WETH[pairs[0].chainId]];
+    !(input instanceof Token && pairs[0].involvesToken(input) || input === ETHER && pairs[0].involvesToken(WETH)) ? process.env.NODE_ENV !== "production" ? invariant(false, 'INPUT') : invariant(false) : void 0;
+    !(typeof output === 'undefined' || output instanceof Token && pairs[pairs.length - 1].involvesToken(output) || output === ETHER && pairs[pairs.length - 1].involvesToken(WETH)) ? process.env.NODE_ENV !== "production" ? invariant(false, 'OUTPUT') : invariant(false) : void 0;
+    var path = [input instanceof Token ? input : WETH];
 
     for (var _iterator = _createForOfIteratorHelperLoose(pairs.entries()), _step; !(_step = _iterator()).done;) {
       var _step$value = _step.value,
@@ -1084,13 +1082,13 @@ function tradeComparator(a, b) {
 
 function wrappedAmount(currencyAmount, chainId) {
   if (currencyAmount instanceof TokenAmount) return currencyAmount;
-  if (currencyAmount.currency === ETHER) return new TokenAmount(WETH[chainId], currencyAmount.raw);
+  if (currencyAmount.currency === ETHER) return new TokenAmount(WETH, currencyAmount.raw);
    process.env.NODE_ENV !== "production" ? invariant(false, 'CURRENCY') : invariant(false) ;
 }
 
 function wrappedCurrency(currency, chainId) {
   if (currency instanceof Token) return currency;
-  if (currency === ETHER) return WETH[chainId];
+  if (currency === ETHER) return WETH;
    process.env.NODE_ENV !== "production" ? invariant(false, 'CURRENCY') : invariant(false) ;
 }
 /**

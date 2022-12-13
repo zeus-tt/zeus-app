@@ -37,6 +37,8 @@ import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { PoolPriceBar } from './PoolPriceBar'
 import { ROUTER_ADDRESS } from '../../constants'
 
+
+
 export default function AddLiquidity({
   match: {
     params: { currencyIdA, currencyIdB },
@@ -47,11 +49,10 @@ export default function AddLiquidity({
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
   const TranslateString = useI18n()
-
   const oneCurrencyIsWBNB = Boolean(
     chainId &&
-    ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
-      (currencyB && currencyEquals(currencyB, WETH[chainId])))
+    ((currencyA && currencyEquals(currencyA, WETH)) ||
+      (currencyB && currencyEquals(currencyB, WETH)))
   )
   const expertMode = useIsExpertMode()
 
@@ -119,16 +120,17 @@ export default function AddLiquidity({
   async function onAdd() {
     if (!chainId || !library || !account) return
     const router = getRouterContract(chainId, library, account)
-
+    
     const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB) {
       return
     }
-
+    
     const amountsMin = {
       [Field.CURRENCY_A]: calculateSlippageAmount(parsedAmountA, noLiquidity ? 0 : allowedSlippage)[0],
       [Field.CURRENCY_B]: calculateSlippageAmount(parsedAmountB, noLiquidity ? 0 : allowedSlippage)[0],
     }
+    
 
     const deadlineFromNow = Math.ceil(Date.now() / 1000) + deadline
 
@@ -166,21 +168,21 @@ export default function AddLiquidity({
     }
 
     setAttemptingTxn(true)
+    
     // const aa = await estimate(...args, value ? { value } : {})
     await estimate(...args, value ? { value } : {})
-      .then((estimatedGasLimit) =>
+    .then((estimatedGasLimit) =>
         method(...args, {
           ...(value ? { value } : {}),
           gasLimit: calculateGasMargin(estimatedGasLimit),
         }).then((response) => {
           setAttemptingTxn(false)
-
           addTransaction(response, {
             summary: `Add ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${currencies[Field.CURRENCY_A]?.symbol
               } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
           })
-
           setTxHash(response.hash)
+          console.log(calculateGasMargin(estimatedGasLimit));
         })
       )
       .catch((e) => {
@@ -270,7 +272,7 @@ export default function AddLiquidity({
           history.push(`/add/${newCurrencyIdB}`)
         }
       } else {
-        history.push(`/add/${currencyIdA || 'BNB'}/${newCurrencyIdB}`)
+        history.push(`/add/${currencyIdA || 'TT'}/${newCurrencyIdB}`)
       }
     },
     [currencyIdA, history, currencyIdB]

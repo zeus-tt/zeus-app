@@ -405,8 +405,8 @@ export default function RemoveLiquidity({
   const oneCurrencyIsETH = currencyA === ETHER || currencyB === ETHER
   const oneCurrencyIsWETH = Boolean(
     chainId &&
-      ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
-        (currencyB && currencyEquals(WETH[chainId], currencyB)))
+      ((currencyA && currencyEquals(WETH, currencyA)) ||
+        (currencyB && currencyEquals(WETH, currencyB)))
   )
 
   const handleSelectCurrencyA = useCallback(
@@ -552,8 +552,8 @@ export default function RemoveLiquidity({
                         <RowBetween style={{ justifyContent: 'flex-end' }}>
                           {oneCurrencyIsETH ? (
                             <StyledInternalLink
-                              to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${
-                                currencyB === ETHER ? WETH[chainId].address : currencyIdB
+                              to={`/remove/${currencyA === ETHER ? WETH.address : currencyIdA}/${
+                                currencyB === ETHER ? WETH.address : currencyIdB
                               }`}
                             >
                               {TranslateString(1188, 'Receive WBNB')}
@@ -561,8 +561,8 @@ export default function RemoveLiquidity({
                           ) : oneCurrencyIsWETH ? (
                             <StyledInternalLink
                               to={`/remove/${
-                                currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'BNB' : currencyIdA
-                              }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'BNB' : currencyIdB}`}
+                                currencyA && currencyEquals(currencyA, WETH) ? 'BNB' : currencyIdA
+                              }/${currencyB && currencyEquals(currencyB, WETH) ? 'BNB' : currencyIdB}`}
                             >
                               {TranslateString(1190, 'Receive BNB')}
                             </StyledInternalLink>

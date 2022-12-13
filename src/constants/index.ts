@@ -1,6 +1,8 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@pancakeswap-libs/sdk'
+import { connectorLocalStorageKey } from '@pancakeswap-libs/uikit'
 
-export const ROUTER_ADDRESS = '0xEd8927761c502DF07e26309f3d1bF109248575c5'
+export const ROUTER_ADDRESS = '0xc1B9301E770761792F9879613Bf35e6F1844Aa7B'
+
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -14,18 +16,16 @@ export const CAKE = new Token(
   'CAKE',
   'PancakeSwap Token'
 )
-export const WBNB = new Token(ChainId.TESTNET, '0x390127E81EDe57CFa1e65eA9A96bD68A59D0a099', 18, 'WTT', 'Wrapped TT')
-export const DAI = new Token(ChainId.TESTNET, '0x77290ce5E17169Ba4A9c0AdAF385287A603288d6', 18, 'TK1', 'Token1')
-export const BUSD = new Token(ChainId.TESTNET, '0xF22Cf1b8f18122a4dfDaAefAE344aB10e17e6C35', 18, 'TK2', 'Token2')
-export const TK1 = new Token(ChainId.TESTNET, '0x77290ce5E17169Ba4A9c0AdAF385287A603288d6', 18, 'TK1', 'Token1')
-export const BTCB = new Token(ChainId.MAINNET, '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', 18, 'BTCB', 'Binance BTC')
-export const USDT = new Token(ChainId.MAINNET, '0x55d398326f99059fF775485246999027B3197955', 18, 'USDT', 'Tether USD')
-export const UST = new Token(
+
+export const WBNB = new Token(ChainId.MAINNET, '0x413cEFeA29F2d07B8F2acFA69d92466B9535f717', 18, 'WTT', 'Wrapped TT')
+export const WBTC = new Token(ChainId.MAINNET, '0x18fB0A62f207A2a082cA60aA78F47a1af4985190', 18, 'WBTC', 'Wrapped BTC')
+export const USDT = new Token(ChainId.MAINNET, '0x4f3c8e20942461e2c3bdd8311ac57b0c222f2b82', 18, 'USDT', 'Tether USD')
+export const BUSD = new Token(
   ChainId.MAINNET,
-  '0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
+  '0xBEB0131D95AC3F03fd15894D0aDE5DBf7451d171',
   18,
-  'UST',
-  'Wrapped UST Token'
+  'BUSD',
+  'Binance USD'
 )
 export const ETH = new Token(
   ChainId.MAINNET,
@@ -35,15 +35,14 @@ export const ETH = new Token(
   'ThunderToken-Peg Ethereum Token'
 )
 
-const WETH_ONLY: ChainTokenList = {
-  [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
-  [ChainId.TESTNET]: [WETH[ChainId.TESTNET]],
-}
+// const WETH_ONLY: ChainTokenList = {
+//   [ChainId.MAINNET]: [WETH],
+// }
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
-  ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, BUSD, BTCB, USDT, UST, ETH],
+  ...WBNB,
+  [ChainId.MAINNET]: [WBNB, WBTC, USDT, BUSD, ETH],
 }
 
 /**
@@ -56,21 +55,19 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, BUSD, USDT],
+  ...WBNB,
+  [ChainId.MAINNET]: [WBNB, USDT],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, BUSD, BTCB, USDT],
+  ...WBNB,
+  [ChainId.MAINNET]: [WBNB, WBTC, USDT],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.MAINNET]: [
     [CAKE, WBNB],
-    [BUSD, USDT],
-    [DAI, USDT],
   ],
 }
 

@@ -10,6 +10,8 @@ import {
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
 import { connectorLocalStorageKey, ConnectorNames } from '@pancakeswap-libs/uikit'
+import { ChainId } from '@pancakeswap-libs/sdk'
+import { hexlify } from 'ethers/lib/utils'
 import useToast from 'hooks/useToast'
 import { connectorsByName } from 'connectors'
 
@@ -23,7 +25,45 @@ const useAuth = () => {
       activate(connector, async (error: Error) => {
         window.localStorage.removeItem(connectorLocalStorageKey)
         if (error instanceof UnsupportedChainIdError) {
-          toastError('Unsupported Chain Id', 'Unsupported Chain Id Error. Check your chain Id.')
+          toastError('Unsupported Chain Id', 'Changing it to ThunderCore');
+          try {
+            await window.ethereum?.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: hexlify(parseInt(process.env.REACT_APP_CHAIN_ID ?? '108')) }]
+            });
+          } catch (err) {
+              // This error code indicates that the chain has not been added to MetaMask
+            if (err.code === 4902) {
+              // hexlify(parseInt(process.env.REACT_APP_CHAIN_ID ?? '18'))
+              if (process.env.REACT_APP_CHAIN_ID === '18') {
+                // thundercore testnet
+                await window.ethereum?.request({
+                  method: 'wallet_addEthereumChain',
+                  params: [
+                    {
+                      chainName: 'ThunderCore Testnet',
+                      chainId: hexlify(parseInt(process.env.REACT_APP_CHAIN_ID ?? '18')), // 18: testnet
+                      nativeCurrency: { name: 'TST', decimals: 18, symbol: 'TST' },
+                      rpcUrls: ['https://testnet-rpc.thundercore.com']
+                    }
+                  ]
+                });
+              } else {
+                // thundercore mainnet
+                await window.ethereum?.request({
+                  method: 'wallet_addEthereumChain',
+                  params: [
+                    {
+                      chainName: 'ThunderCore Mainnet',
+                      chainId: hexlify(parseInt(process.env.REACT_APP_CHAIN_ID ?? '108')),
+                      nativeCurrency: { name: 'TT', decimals: 18, symbol: 'TT' },
+                      rpcUrls: ['https://mainnet-rpc.thundertoken.net', 'https://mainnet-rpc.thundercore.io']
+                    }
+                  ]
+                });
+              }
+            }
+          }
         } else if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
           toastError('Provider Error', 'No provider was found')
         } else if (

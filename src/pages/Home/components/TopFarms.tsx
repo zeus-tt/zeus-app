@@ -7,8 +7,11 @@ import TopFarmSortImg from '../../../assets/Home/top-farms-sort.svg'
 
 const StyledBackground = styled.div`
   width: 100%;
-  background: linear-gradient(180deg, #021d35 -11.08%, rgba(2, 29, 53, 0) 91.97%);
-  background: cover;
+  // background: linear-gradient(180deg, #021d35 -11.08%, rgba(2, 29, 53, 0) 91.97%);
+  background:#1B0F01;
+  // background: cover;
+  
+  
 `
 
 const StyledTradeButton = styled(Button)`
@@ -48,14 +51,14 @@ function TopFarms() {
   const mobileBreakpoints = useMatchBreakpoints()
 
   return (
-    <StyledBackground>
-      <StyledHomeCard flexDirection="column">
-        <Flex flex={1} flexDirection="row" mb="4em">
-          <Flex p="0px" flex="1 1 300px" flexDirection="column">
-            <Text fontSize={mobileBreakpoints.isXl ? "2.1875em" : "1.8em"} bold fontFamily="Poppins">
+    <StyledBackground >
+      <StyledHomeCard style={{padding:"0"}} alignItems='center' flexDirection="column">
+        <Flex flex={1} flexDirection="row" >
+          <Flex style={{ textAlign:'center'}} p="0px"  flexDirection="column">
+            <Text fontWeight='400' color='#FFB802' style={{textShadow:" 2px 6px 6px rgba(0, 0, 0, 0.66)"}} fontSize={mobileBreakpoints.isXl ? "3.1875em" : "1.8em"} bold fontFamily="GT Sectra Display Medium">
               Zeus Farms will launch in Q4 2022
             </Text>
-            <Text fontWeight={400} fontSize="1.125em">
+            <Text fontStyle='Urbanist' fontWeight={400} fontSize="1.35em">
               Get ready for full GameFi experience native to ThunderCore
             </Text>
             {/* <Row mt="1em">

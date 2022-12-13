@@ -9,11 +9,13 @@ import Reward from './components/Reward'
 import TopFarms from './components/TopFarms'
 import Usedby from './components/Usedby'
 
+
+
 function Home() {
   return (
     <>
       <Navbar />
-      <Reward />
+      {/* <Reward /> */}
       <Hero />
       <Usedby />
       <LearnMore />

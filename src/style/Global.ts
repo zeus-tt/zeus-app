@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: Raleway, sans-serif;
-    background-color: ${({ theme }) => theme.colors.background};
-
+    // background-color: ${({ theme }) => theme.colors.background};
+    background-color:#1B0F01;
     img {
       height: auto;
       max-width: 100%;

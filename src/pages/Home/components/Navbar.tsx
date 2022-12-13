@@ -18,17 +18,29 @@ import UnlockButton from 'components/ConnectWalletButton'
 import { TranslateString } from 'utils/translateTextHelpers'
 import logo from '../../../assets/full-logo.svg'
 import hamburgerMenuImg from '../../../assets/Home/hamburger_menu.svg'
+import RightLineImg from '../../../assets/Home/RightLine.png'
+import LiftLineImg from '../../../assets/Home/LiftLine.png'
 
 const StyledNavbar = styled.nav`
   display: flex;
   width: 100%;
+ z-index:2;
   padding-top: 1.0625em;
   padding-bottom: 1.0625em;
   padding-left: 3em;
   padding-right: 3em;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  // background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.46); 
+  backdrop-filter: blur(30px);
+  position:absolute;
+
+
+
+
 `
 
 const StyledNavButton = styled(Button)`
@@ -42,6 +54,16 @@ const StyledNavButtonLink = styled.a`
   font-size: 1em;
   font-family: 'Raleway';
   color: white;
+
+
+
+`
+
+const LeftLineImage = styled(Image)`
+z-index:999;
+`
+const RightLineImage = styled(Image)`
+z-index:999;
 `
 
 const StyledSideDiv = styled.div`
@@ -52,20 +74,21 @@ const StyledSideDiv = styled.div`
   flex-direction: column;
   gap: 1em;
   flex-wrap: wrap;
-  height: 100%;
-  width: 50%;
+  // height: 100%;
+  width: 100%;
   z-index: 999;
-  background: linear-gradient(179.87deg, #010e1a -2.34%, rgba(1, 14, 26, 0.19) 101.22%);
+  // background: linear-gradient(179.87deg, #010e1a -2.34%, rgba(1, 14, 26, 0.19) 101.22%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
   border-radius: 14px;
   backdrop-filter: blur(58px);
   -webkit-backdrop-filter: blur(58px);
-  padding: 2em;
+  padding: 2em;  
 `
 
-function mobileSideNav() {
+function mobileSideNav()  {
   // side nav for mobile screens
   return (
-    <StyledSideDiv>
+    <StyledSideDiv >
       <ButtonMenuItem>
         <StyledNavButton to="/swap" as={Link}>
           Swap
@@ -108,9 +131,10 @@ function Navbar() {
 
   return (
     <StyledNavbar>
-      <Image src={logo} width={92} height={50} />
+      {/* <Image src={logo} width={92} height={50} /> */}
       {mobileBreakpoints.isXl && (
-        <Flex alignItems="center">
+        <Flex style={{width:'80%', position:'relative'}} alignItems="center" justifyContent='center'>
+          <LeftLineImage src={LiftLineImg} width={600} height={5} />
           <ButtonMenuItem id="swap-nav-link" to="/swap" as={NavLink}>
             Swap
           </ButtonMenuItem>
@@ -129,33 +153,22 @@ function Navbar() {
               Discord
             </StyledNavButtonLink>
           </ButtonMenuItem>
-        </Flex>
+         < RightLineImage src={RightLineImg}  width={600} height={5} />
+         </Flex>
       )}
 
-      {mobileBreakpoints.isXl && (
-        <Flex alignItems="center">
-          {/* <Text bold fontSize="1.125em" style={{ marginRight: '1em' }}>
-            $0
-          </Text> */}
-          {/* <IconButton variant="text" title={TranslateString(1202, 'Recent transactions')}>
-            <GlobeIcon width="24px" color="currentColor" />
-          </IconButton>
-          <IconButton variant="text" title={TranslateString(1202, 'Recent transactions')}>
-            <CogIcon width="24px" color="currentColor" />
-          </IconButton> */}
-          {!account && <UnlockButton />}
 
-          {account && (
-            <Text bold fontSize="1.125em" style={{ marginRight: '1em' }}>
-              {[account.substring(0, 4), account.substring(account.length - 4, account.length)].join('....')}
-            </Text>
-          )}
-        </Flex>
-      )}
+
+
+      
+
+
+
+  
 
       {!mobileBreakpoints.isXl && (
         // hamburger menu on mobile
-        <IconButton variant="text" onClick={showSideNavHandler} title={TranslateString(1202, 'Recent transactions')}>
+        <IconButton  variant="text" onClick={showSideNavHandler} title={TranslateString(1202, 'Recent transactions')}>
           <Image mt="0.7em" src={hamburgerMenuImg} alt="menu" width={24} height={24} />
         </IconButton>
       )}

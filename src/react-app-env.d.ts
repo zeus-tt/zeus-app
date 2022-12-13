@@ -6,11 +6,14 @@ declare module 'jazzicon' {
 
 declare module 'fortmatic'
 
+
+
 interface Window {
   ethereum?: {
     isMetaMask?: true
     on?: (...args: any[]) => void
     removeListener?: (...args: any[]) => void
+    request?: any
   }
   web3?: any
   BinanceChain?: BinanceChain
@@ -31,4 +34,10 @@ interface BinanceChain {
   enable: () => Promise<string[]>
   on?: (method: string, listener: (...args: any[]) => void) => void
   removeListener?: (method: string, listener: (...args: any[]) => void) => void
+}
+
+
+declare module '*.mp4' {
+  const src: string;
+  export default src;
 }

@@ -21,6 +21,8 @@ export function ConfirmAddModalBottom({
   poolTokenPercentage?: Percent
   onAdd: () => void
 }) {
+
+
   return (
     <>
       <RowBetween>

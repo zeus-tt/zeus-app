@@ -100,12 +100,12 @@ function mobileSideNav()  {
         </StyledNavButton>
       </ButtonMenuItem>
       <ButtonMenuItem>
-        <StyledNavButtonLink href="https://docs.zeusswap.fi/" target="_blank">
+        <StyledNavButtonLink href="https://docs.aod.fi/" target="_blank">
           Docs
         </StyledNavButtonLink>
       </ButtonMenuItem>
       <ButtonMenuItem>
-        <StyledNavButtonLink href="https://discord.gg/TEwDyb7d" target="_blank">
+        <StyledNavButtonLink href="https://discord.gg/6ZU8nxGWVE" target="_blank">
           Discord
         </StyledNavButtonLink>
       </ButtonMenuItem>
@@ -143,13 +143,13 @@ function Navbar() {
           </ButtonMenuItem>
 
           <ButtonMenuItem>
-            <StyledNavButtonLink href="https://docs.zeusswap.fi/" target="_blank">
+            <StyledNavButtonLink href="https://docs.aod.fi/" target="_blank">
               Docs
             </StyledNavButtonLink>
           </ButtonMenuItem>
 
           <ButtonMenuItem>
-            <StyledNavButtonLink href="https://discord.gg/TEwDyb7d" target="_blank">
+            <StyledNavButtonLink href="https://discord.gg/6ZU8nxGWVE" target="_blank">
               Discord
             </StyledNavButtonLink>
           </ButtonMenuItem>

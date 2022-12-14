@@ -2,13 +2,13 @@ import { Button, Flex, Image, Text, useMatchBreakpoints } from '@pancakeswap-lib
 import UnlockButton from 'components/ConnectWalletButton'
 import Row from 'components/Row'
 import React, { useCallback } from 'react'
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
 
 import '../../../assets/css/fonts.css'
 // import '../../../assets/css/button.css'
 import characterImg from '../../../assets/Home/character.png'
-import  palaceImg from '../../../assets/Home/palace.jpg'
+import palaceImg from '../../../assets/Home/palace.jpg'
 import thunderImg from '../../../assets/Home/thunder.png'
 import thunder2Img from '../../../assets/Home/thunder2.png'
 import thunderLogo from '../../../assets/Home/thunderLogo.svg'
@@ -68,7 +68,7 @@ const PlayButton = styled.button`
 // width:;
 cursor: pointer;
 background: var(--background-color);
-padding: 1rem 5.5rem;
+padding: 1rem  ;
 font-weight:bolder;
 border: 0;
 font-family:GT Spectra Display Medium;
@@ -154,7 +154,7 @@ transition: color 250ms;
 
 
 @media only screen and (max-width:600px){
- padding:.5rem 2.75rem;
+ padding:.5rem 1.5rem;
     
   }
 
@@ -179,7 +179,7 @@ color: #FBD300;
 width:fit-content;
 cursor: pointer;
 background: var(--background-color);
-padding: 0.7em 2.5em;
+padding: 0.7em 2.2em;
 // font-weight:600;
 // font-family:GT Sectra Display Bold;
 border: 0;
@@ -325,7 +325,7 @@ const StyledFillColor = styled.div`
   background: #00101f;
 `
 
-const BorderLine =  styled.img`
+const BorderLine = styled.img`
 position:absolute;
 bottom:-7rem;
 left:0;
@@ -336,11 +336,31 @@ bottom:-2rem;
 }
 
 `
-const RightFogImage =  styled.img`
+const RightFogImage = styled.img`
 position:absolute;
 bottom:-20rem;
 right:0;
 z-index:-1;
+`
+
+const ButtonContainer = styled.div`
+display:flex;
+flex-direaction:row;
+justify-content:space-between;
+align-items:center;
+margin:0 auto;
+width:100%;
+// flex-wrap:wrap;
+gap:20%;
+// border:1px solid red;
+@media only screen and (max-width:600px){
+  justify-content:center;
+  margin:0 auto;
+  gap:20%;
+  flex-wrap:wrap;
+  }
+
+
 `
 
 
@@ -361,16 +381,27 @@ function Hero() {
             <Text style={{maxWidth:"600px"}} fontFamily='Urbanist' m={20} lineHeight={1} fontSize={mobileBreakpoints.isXl ? "1.5em" : "1.2em"} textAlign="center">
             Welcome to Acropolis of Athena, home of mighty gods, heroes and cutting-edge DeFi protocols. Join us in the adventure & start earning.  
             </Text>
-            <Flex  style={{ width:"80%", margin:"0 auto"}} justifyContent="space-between" >
 
-            <PlayButton>
-              Play
-            </PlayButton>
-            <LearnButton>
-              Learn More
-            </LearnButton>
-            </Flex>
            
+
+
+            <ButtonContainer  >
+
+              <PlayButton disabled style={{ margin:'20px 0',cursor: "not-allowed" }} >
+              Play Now (Coming Soon)
+              </PlayButton>
+
+              
+              <a href="https://docs.aod.fi/" target='_blank' rel="noreferrer" >
+                <LearnButton >
+
+                  Learn More
+                </LearnButton>
+              </a>
+
+            </ButtonContainer>
+
+
 
           </Flex>
         </Flex>
@@ -380,8 +411,8 @@ function Hero() {
           <Styled2Image src={thunder2Img} alt="thunder2 image" width={634} height={455} />
         </StyledImageDiv> */}
       </Flex>
-      <BorderLine  src={Border} alt='borderline' width={12000} height={200} />
-      <RightFogImage src={RightFog} width={600} height={600}/>
+      <BorderLine src={Border} alt='borderline' width={12000} height={200} />
+      <RightFogImage src={RightFog} width={600} height={600} />
     </StyledMainContainer>
   )
 }

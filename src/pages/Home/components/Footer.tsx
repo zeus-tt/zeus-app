@@ -20,11 +20,11 @@ import telegram from '../../../assets/Home/telegram.png'
 import LeftFog from '../../../assets/Home/leftFog.svg'
 
 
-const LINKS = {
-  twitter: 'https://twitter.com/ZeusExchange',
-  telegram: 'https://t.me/ZeusOnTT',
-  discord: 'https://discord.gg/TEwDyb7d'
-};
+// const LINKS = {
+//   twitter: 'https://twitter.com/ZeusExchange',
+//   telegram: 'https://t.me/ZeusOnTT',
+//   discord: 'https://discord.gg/6ZU8nxGWVE'
+// };
 
 const StyledFooterContainer = styled.div`
   background:url(${FooterBg}) no-repeat bottom;
@@ -206,11 +206,11 @@ function Footer() {
 
 
             <FooterIcons >
-              <StyledSubHeading  href="https://discord.gg/TEwDyb7d" target="_blank">
+              <StyledSubHeading  href="https://discord.gg/6ZU8nxGWVE" target="_blank">
 
               <img src={discord} alt="discord" width={44} height={44}   />
               </StyledSubHeading>
-              <StyledSubHeading href="https://twitter.com/ZeusExchange" target="_blank">
+              <StyledSubHeading href="https://twitter.com/ageofdefi_tt" target="_blank">
               <img src={twiter} alt="twitter" width={44} height={44}   />
               </StyledSubHeading>
 
@@ -240,11 +240,11 @@ function Footer() {
             <StyledSubHeading href='https://docs.zeusswap.fi/get-started/introduction-to-zeusswap' target='_blank'>
               <Text fontSize={mobileBreakpoints.isXl ? "1.5rem" : "1rem"}>
 
-              Documantation
+              Documentation
               </Text>
               
               </StyledSubHeading>
-            <StyledSubHeading  href="https://docs.zeusswap.fi/how-zeusswap-works/roadmap" target="_blank" >
+            <StyledSubHeading  href="https://docs.aod.fi/how-zeusswap-works/roadmap" target="_blank" >
              <Text fontSize={mobileBreakpoints.isXl ? "1.5rem" : "1rem"}>
              Roadmap
              </Text >

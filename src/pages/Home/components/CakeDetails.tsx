@@ -244,7 +244,7 @@ function CakeDetails() {
         <Flex  flex="1 1 600px" flexDirection="column" justifyContent="center">
           <Text color='#FFB802' style={{
 textShadow: "2px 6px 6px rgba(0, 0, 0, 0.66)"}} m="0 auto" lineHeight='2em' fontFamily="GT Sectra Display Medium"  fontSize={mobileBreakpoints.isXl ? "2.375em" : "1.8em"} >
-          Even the Gods want $Zeus
+          Even the Gods want $ZEUS
           </Text>
           <Text fontFamily='Urbanist' px="1rem"  textAlign={mobileBreakpoints.isxl ? "center" :"left"} m="0 auto" fontSize="1.4em" fontWeight="300">
 
@@ -253,8 +253,8 @@ textShadow: "2px 6px 6px rgba(0, 0, 0, 0.66)"}} m="0 auto" lineHeight='2em' font
           <Flex  justifyContent={mobileBreakpoints.isXl ? "flex-start" : "center"}
               
           flexWrap='wrap' alignItems='center' style={{  gap:"10px"}} my="3em">
-            <TradeButton to="/swap" as={Link}>Trade Now</TradeButton>
-            <ExternalLink href="https://docs.zeusswap.fi/get-started/introduction-to-zeusswap">
+            <TradeButton to="/swap" as={Link}>Swap Now</TradeButton>
+            <ExternalLink href="https://docs.aod.fi/">
                 <StyledFillColor>
                   <StyledPrimaryTextBlue>Learn More</StyledPrimaryTextBlue>
                 </StyledFillColor>
